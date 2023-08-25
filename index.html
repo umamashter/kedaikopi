@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi kenangan Senja</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://icons.getbootstrap.com/"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <audio autoplay>
+      <source src="Snaptik.app_7234792655991934209.mp3s" type="audio/mp3" />
+    </audio>
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">kenangan<span>senja.</span></a>
+
+      <div class="navbar-nav">
+        <a href="#home">home</a>
+        <a href="#about">Tentang kami</a>
+        <a href="#menu">menu</a>
+        <a href="#products">Produk</a>
+        <a
+          href="https://api.whatsapp.com/qr/MAWRUZQBS2T6B1?autoload=1&app_absent=0"
+          >Kontak</a
+        >
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"
+          ><i data-feather="shopping-cart"></i
+        ></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here.." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="ll.png" alt="Produk 1" />
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="ll.png" alt="Produk 1" />
+          <div class="item-detail">
+            <h3>Product 2</h3>
+            <div class="item-price">IDR 40K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="ll.png" alt="Produk 1" />
+          <div class="item-detail">
+            <h3>Product 3</h3>
+            <div class="item-price">IDR 20K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+    </nav>
+    <section class="hero" id="home">
+      <main class="content">
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          Mari Nikmati Secangkir <span>Kopi</span>
+        </h1>
+
+        <p data-aos="fade-left">
+          Kenikmatannya kopi dari kenangan senja yang akan selalu membuatmu
+          semangat di setiap aktivitasmu.
+        </p>
+        <a href="https://wa.me/qr/MAWRUZQBS2T6B1" class="cta" data-aos="zoom-in"
+          >Beli Sekarang</a
+        >
+      </main>
+    </section>
+    <section
+      id="about"
+      class="about"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h2>Tentang<span>Kami</span></h2>
+      <div class="row">
+        <div class="about-img" data-aos="flip-right" data-aos-duration="1000">
+          <img src="tk.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa memilih kopi kami?</h3>
+          <p>
+            Didirikan pada 2023. kenangan senja merupakan sebuah startup kopi
+            retail yang ingin menyajikan high quality Coffee untuk para
+            pelanggannya. Nama kenangan Senja yang merupakan harapan kami untuk
+            tumbuh dengan cepat, kuat, tinggi & menghidupi semua yang ada di
+            sekitar kami. Kami ingin eksistensi kami akan membuat standar baru
+            kopi berkualitas untuk konsumen.
+          </p>
+          <p>
+            Memanfaatkan jaringan dan pengalaman kami, kami menggunakan
+            teknologi mutakhir dan racikan kopi terbaik.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="menu" class="menu" data-aos="fade-up" data-aos-duration="1000">
+      <h2><span>Menu</span>Kami</h2>
+      <p>
+        Apapun yang kamu lakukan, kemanapun kamu pergi, single origin dari
+        kenangan senja yang Freshly Roasted Coffee pasti bisa jadi teman sejati
+        yang kenikmatannya tidak perlu kamu ragukan lagi
+      </p>
+      <div class="row" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="menu-card">
+          <img src="cf.jpg" alt="Espresso" class="menu-card-img" />
+          <h3 class="menu-card-title">- Americao -</h3>
+          <p class="menu-card-price">IDR 10K</p>
+          <p>kopi ini memiliki rasa pahit yang dominan dan cocok</p>
+          <p>ditemani gula atau krim sebagai pelengkap</p>
+        </div>
+        <div class="menu-card">
+          <img src="mj.jpg" alt="Espresso" class="menu-card-img" />
+          <h3 class="menu-card-title">- Capuccino -</h3>
+          <p class="menu-card-price">IDR 15K</p>
+          <p>minuman kopi khas Italia yang dibuat</p>
+          <p>pas untuk jadi energy booster</p>
+        </div>
+        <div class="menu-card">
+          <img src="menusaya.jpg" alt="Espresso" class="menu-card-img" />
+          <h3 class="menu-card-title">- Espresso -</h3>
+          <p class="menu-card-price">IDR 18K</p>
+          <p>Dengan Madu Manuka yang</p>
+          <p>pas untuk jadi energy booster</p>
+        </div>
+        <div class="menu-card">
+          <img src="dk.jpg" alt="Black Coffe" class="menu-card-img" />
+          <h3 class="menu-card-title">- Black Coffe -</h3>
+          <p class="menu-card-price">IDR 10K</p>
+          <p>minuman yang terbuat dari biji kopi yang disangrai</p>
+          <p>dan diseduh air</p>
+        </div>
+        <div class="menu-card">
+          <img src="tk.jpg" alt="Espresso" class="menu-card-img" />
+          <h3 class="menu-card-title">- Latte -</h3>
+          <p class="menu-card-price">IDR 15K</p>
+          <p>kopi yang dicampur dengan susu dan memiliki</p>
+          <p>lapisan busa yang tipis di bagian atasnya</p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="products"
+      id="products"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <h2><span>Produk Unggulan</span>Kami</h2>
+      <p></p>
+      <div class="row">
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="ll.png" alt="Product1" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans 1</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="hj.jpg" alt="Product1" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans 1</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="cv.jpg" alt="Product1" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans 1</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <h2 data-aos="fade-up" data-aos-duration="1000">
+        <span>Kontak</span>Kami
+      </h2>
+      <p data-aos="fade-up" data-aos-duration="1000">
+        Jika Anda memiliki pertanyaan atau kekhawatiran, Anda dapat menghubungi
+        kami dengan mengisi formulir atau Anda dapat mengirim email pribadi
+        kepada kami.
+      </p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.4650612286292!2d113.6769673844245!3d-7.074762759077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9df9c7115a2cb%3A0xb9468a53d0750c37!2sMASJID%20AL%20IDRISI!5e0!3m2!1sid!2sid!4v1687748861854!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="nama" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="text" placeholder="nomor hp" />
+          </div>
+          <button type="submit" class="btn">kirim pesan</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="socials">
+        <a href="https://www.instagram.com/?hl=id"
+          ><i data-feather="instagram"></i
+        ></a>
+        <a
+          href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Did"
+          ><i data-feather="twitter"></i
+        ></a>
+        <a href="https://id-id.facebook.com/"
+          ><i data-feather="facebook"></i
+        ></a>
+      </div>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Kontak</a>
+      </div>
+      <div class="credit">
+        <p>Creadet by <a href="">Khoirulumam</a>. | &copy; 2023.</p>
+      </div>
+    </footer>
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="ll.png" alt="Product 1" />
+          <div class="product-content">
+            <h3>Product 1</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
+              laboriosam in! Laborum laboriosam natus facere nostrum, numquam
+              deserunt optio tempora?
+            </p>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+            <a
+              href="https://api.whatsapp.com/qr/MAWRUZQBS2T6B1?autoload=1&app_absent=0"
+              ><i data-feather="shopping-cart"></i><span>add to cart</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
