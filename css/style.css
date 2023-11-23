@@ -4,12 +4,12 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
+  margin: 0; /*mengatur jarak antara elemen dengan elemen lain di sekitarnya. */
+  padding: 0; /*untuk mengatur jarak antara konten dalam elemen dan tepi elemen tersebut.*/
+  text-decoration: none; /* Menghapus garis bawah dari tautan */
+  box-sizing: border-box; /*digunakan untuk mengendalikan bagaimana browser menghitung dimensi total dari sebuah elemen HTML, terutama ketika Anda mengatur lebar (width) dan tinggi (height) elemen serta padding dan border.*/
+  outline: none; /* Menghilangkan garis luar saat elemen mendapatkan fokus */
+  border: none; /* Menghilangkan border pada elemen */
 }
 
 html {
@@ -134,6 +134,70 @@ body {
   color: var(--bg);
 }
 
+/* chekou*/
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.form-container h5 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-container form {
+  width: 100%;
+  text-align: center;  
+}
+
+.form-container label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+
+.form-container span {
+  text-align: right;
+}
+
+.form-container input {
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+
+.form-container .checkout-button {
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+#shopping-cart-button {
+  position: relative;
+}
+
+#shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -161,28 +225,37 @@ body {
 }
 
 .shopping-cart img {
-  height: 6rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
 .shopping-cart h3 {
+  font-size: 1.4rem;
+  
+}
+
+.shopping-cart h4 {
   font-size: 1.6rem;
-  padding-bottom: 0.5rem;
+  margin-top: -1rem;
+  text-align: center;
 }
 
 .shopping-cart .item-price {
   font-size: 1.2rem;
 }
 
-.shopping-cart .remove-item {
-  position: absolute;
-  right: 1rem;
+.shopping-cart .cart-item #add,
+.shopping-cart .cart-item #remove {
+  display: inline-block;
   cursor: pointer;
+  padding: 2px 5px;
+  margin: 0 8px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.shopping-cart .remove-item:hover {
-  color: var(--primary);
-}
 .hero {
   min-height: 100vh;
   display: flex;
@@ -381,11 +454,7 @@ body {
   font-weight: bold;
 }
 
-.products .product-price span {
-  text-decoration: line-through;
-  font-weight: lighter;
-  font-size: 1rem;
-}
+
 .contact .row {
   display: flex;
   margin-top: 2rem;
@@ -598,6 +667,6 @@ footer .credit a {
 /* Mobile Phone */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 30%;
   }
 }

@@ -13,34 +13,40 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://icons.getbootstrap.com/"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <script src="src/app.js"></script>
   </head>
   <body>
     <audio autoplay>
       <source src="Snaptik.app_7234792655991934209.mp3s" type="audio/mp3" />
     </audio>
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">kenangan<span>senja.</span></a>
 
-      <div class="navbar-nav">
+      <div class="navbar-nav" >
         <a href="#home">home</a>
         <a href="#about">Tentang kami</a>
         <a href="#menu">menu</a>
         <a href="#products">Produk</a>
-        <a
-          href="https://api.whatsapp.com/qr/MAWRUZQBS2T6B1?autoload=1&app_absent=0"
-          >Kontak</a
+        <a href="#contact">Kontak</a
         >
       </div>
       <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart-button"
-          ><i data-feather="shopping-cart"></i
-        ></a>
+          ><i data-feather="shopping-cart"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
       <div class="search-form">
@@ -48,30 +54,42 @@
         <label for="search-box"><i data-feather="search"></i></label>
       </div>
       <div class="shopping-cart">
+        <template x-for="(item, index) in $store.cart.items" x-key="index">
         <div class="cart-item">
-          <img src="ll.png" alt="Produk 1" />
+          <img :src="`css/img/${item.img}`" :alt="item.name" />
           <div class="item-detail">
-            <h3>Product 1</h3>
-            <div class="item-price">IDR 30K</div>
+            <h3 x-text="item.name"></h3>
+            <div class="item-price">
+              <span x-text="rupiah(item.price)"></span> &times;
+              <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+              <span x-text="item.quantity"></span>
+              <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+              <span x-text="rupiah(item.total)"></span>
+            </div>
           </div>
-          <i data-feather="trash-2" class="remove-item"></i>
+          
         </div>
-        <div class="cart-item">
-          <img src="ll.png" alt="Produk 1" />
-          <div class="item-detail">
-            <h3>Product 2</h3>
-            <div class="item-price">IDR 40K</div>
-          </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-        <div class="cart-item">
-          <img src="ll.png" alt="Produk 1" />
-          <div class="item-detail">
-            <h3>Product 3</h3>
-            <div class="item-price">IDR 20K</div>
-          </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
+      </template>
+      <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">keranjang kosong</h4>
+      <h4 x-show="$store.cart.items.length">Total : <Span x-text="rupiah($store.cart.total)"></Span></h4>
+      <div class="form-container" x-show="$store.cart.items.length">
+        <form action="" id="checkoutForm">
+          <h5>Customer Detail</h5>
+          <label for="name">
+            <span>Name</span>
+            <input type="text" id="name" name="name">
+          </label>
+          <label for="email">
+            <span>Email</span>
+            <input type="email" id="email" name="email">
+          </label>
+          <label for="phone">
+            <span>Phone</span>
+            <input type="number" id="phone" name="phone" autocapitalize="off">
+          </label>
+          <button class="checkout-button" type="submit" id="checkout-button" value="checkout">Checkout</button>
+        </form>
+      </div>
       </div>
     </nav>
     <section class="hero" id="home">
@@ -124,36 +142,36 @@
         kenangan senja yang Freshly Roasted Coffee pasti bisa jadi teman sejati
         yang kenikmatannya tidak perlu kamu ragukan lagi
       </p>
-      <div class="row" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="menu-card">
+      <div class="row">
+        <div class="menu-card" data-aos="zoom-in" data-aos-delay="150">
           <img src="cf.jpg" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Americao -</h3>
           <p class="menu-card-price">IDR 10K</p>
           <p>kopi ini memiliki rasa pahit yang dominan dan cocok</p>
           <p>ditemani gula atau krim sebagai pelengkap</p>
         </div>
-        <div class="menu-card">
+        <div class="menu-card" data-aos="zoom-in" data-aos-delay="200">
           <img src="mj.jpg" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Capuccino -</h3>
           <p class="menu-card-price">IDR 15K</p>
           <p>minuman kopi khas Italia yang dibuat</p>
           <p>pas untuk jadi energy booster</p>
         </div>
-        <div class="menu-card">
+        <div class="menu-card" data-aos="zoom-in" data-aos-delay="250">
           <img src="menusaya.jpg" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Espresso -</h3>
           <p class="menu-card-price">IDR 18K</p>
           <p>Dengan Madu Manuka yang</p>
           <p>pas untuk jadi energy booster</p>
         </div>
-        <div class="menu-card">
+        <div class="menu-card" data-aos="zoom-in" data-aos-delay="300">
           <img src="dk.jpg" alt="Black Coffe" class="menu-card-img" />
           <h3 class="menu-card-title">- Black Coffe -</h3>
           <p class="menu-card-price">IDR 10K</p>
           <p>minuman yang terbuat dari biji kopi yang disangrai</p>
           <p>dan diseduh air</p>
         </div>
-        <div class="menu-card">
+        <div class="menu-card" data-aos="zoom-in" data-aos-delay="350">
           <img src="tk.jpg" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Latte -</h3>
           <p class="menu-card-price">IDR 15K</p>
@@ -167,76 +185,33 @@
       id="products"
       data-aos="fade-up"
       data-aos-duration="1000"
+      x-data="products"
     >
       <h2><span>Produk Unggulan</span>Kami</h2>
       <p></p>
       <div class="row">
-        <div class="product-card">
+        <template x-for="(item, index) in items" x-key="index">
+        <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
           <div class="product-icons">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
+            <a href="#" @click.prevent="$store.cart.add(item)"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#" class="item-detail-button"><i class="fa-sharp fa-solid fa-eye"></i></a>
           </div>
           <div class="product-image">
-            <img src="ll.png" alt="Product1" />
+            <img :src="`css/img/${item.img}`" :alt="item.name" />
           </div>
           <div class="product-content">
-            <h3>Coffe Beans 1</h3>
+            <h3 x-text="item.name"></h3>
             <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
             </div>
-            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+            <div class="product-price"><span x-text="rupiah(item.price)"></span></div>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-icons">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="product-image">
-            <img src="hj.jpg" alt="Product1" />
-          </div>
-          <div class="product-content">
-            <h3>Coffe Beans 1</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-icons">
-            <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="item-detail-button"
-              ><i data-feather="eye"></i
-            ></a>
-          </div>
-          <div class="product-image">
-            <img src="cv.jpg" alt="Product1" />
-          </div>
-          <div class="product-content">
-            <h3>Coffe Beans 1</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-          </div>
-        </div>
+      </template>
       </div>
     </section>
     <section id="contact" class="contact">
@@ -334,5 +309,6 @@
     <script>
       AOS.init();
     </script>
+   
   </body>
 </html>
